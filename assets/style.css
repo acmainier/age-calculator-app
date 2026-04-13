@@ -1,5 +1,51 @@
 body {
-    color: cornflowerblue;
+background-color:  hsl(0, 0%, 86%);
+}
+
+main {
+ background-color: hsl(0, 100%, 100%);
+ width: 50%;
+ margin: 0 auto;
+ margin-top: 10rem;
+ padding: 2rem;
+ border-radius: 1rem;
+ border-bottom-right-radius: 10rem;
+}
+
+form {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    color: hsl(0, 1%, 44%);
+    font-family: Poppins, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-align: left;
+}
+
+form input {
+    border-color: hsl(0, 0%, 86%);
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 32px;
+}
+
+.submit-button {
+    border: none;
+    background-color: hsl(259, 100%, 65%);
+    border-radius: 50%;
+    padding: 15px;
 }
 
 .attribution {

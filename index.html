@@ -15,20 +15,30 @@
 </head>
 
 <body>
+  <main>
   <form>
-    <label for="day">Day</label>
-    <input id="day" name="day" type="number" placeholder="DD" maxlength="2" min="1" max="31" required>
-
-    <label for="month">Month</label>
-    <input id="month" name="month" type="number" placeholder="MM" maxlength="2" min="1" max="12" required>
-
-    <label for="year">Year</label>
-    <input id="year" name="year" type="number" placeholder="YYYY" maxlength="4" min="1900" max="2026" required>
+    <div class="field">
+      <label for="day">Day</label>
+      <input id="day" name="day" type="number" placeholder="DD" maxlength="2" min="1" max="31" required>
+    </div>
+    <div class="field">
+      <label for="month">Month</label>
+      <input id="month" name="month" type="number" placeholder="MM" maxlength="2" min="1" max="12" required>
+    </div>
+    <div class="field">
+      <label for="year">Year</label>
+      <input id="year" name="year" type="number" placeholder="YYYY" maxlength="4" min="1900" max="2026" required>
+    </div>
+    <button type="submit" class="submit-button">
+      <img src="./assets/images/icon-arrow.svg" alt="Submit form">
+    </button>
   </form>
-  -- years
-  -- months
-  -- days
-
+  <section id="results">
+    <p id="years">Y</p>
+    <p id="months">M</p>
+    <p id="days">D</p>
+  </section>
+</main>
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Anne-Cécile</a>.
