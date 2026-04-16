@@ -1,51 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="./assets/style.css" />
 
-  <link rel="stylesheet" href="./assets/style.css">
+    <title>Frontend Mentor | Age calculator app</title>
+    <script src="./assets/script.js" defer></script>
+  </head>
 
-  <title>Frontend Mentor | Age calculator app</title>
-  <script src="./assets/script.js" defer></script>
-</head>
-
-<body>
-  <main>
-    <form>
-      <div class="field">
-        <label for="day">Day</label>
-        <input id="day" name="day" type="number" placeholder="DD" maxlength="2">
-        <p class="error-message" id="error-day"></p>
-      </div>
-      <div class="field">
-        <label for="month">Month</label>
-        <input id="month" name="month" type="number" placeholder="MM" maxlength="2">
-        <p class="error-message" id="error-month"></p>
-      </div>
-      <div class="field">
-        <label for="year">Year</label>
-        <input id="year" name="year" type="number" placeholder="YYYY" maxlength="4">
-        <p class="error-message" id="error-year"></p>
-      </div>
-      <button type="submit" class="submit-button">
-        <img src="./assets/images/icon-arrow.svg" alt="Submit form">
-      </button>
-    </form>
-    <section id="results">
-      <span id="years"></span> years <br>
-      <span id="months"></span> months <br>
-      <span id="days"></span> days
-    </section>
-  </main>
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Anne-Cécile</a>.
-  </footer>
-</body>
-
+  <body>
+    <main>
+      <form>
+        <div class="field">
+          <label for="day">Day</label>
+          <input
+            id="day"
+            name="day"
+            type="number"
+            placeholder="DD"
+            maxlength="2"
+          />
+          <p class="error-message" id="error-day"></p>
+        </div>
+        <div class="field">
+          <label for="month">Month</label>
+          <input
+            id="month"
+            name="month"
+            type="number"
+            placeholder="MM"
+            maxlength="2"
+          />
+          <p class="error-message" id="error-month"></p>
+        </div>
+        <div class="field">
+          <label for="year">Year</label>
+          <input
+            id="year"
+            name="year"
+            type="number"
+            placeholder="YYYY"
+            maxlength="4"
+          />
+          <p class="error-message" id="error-year"></p>
+        </div>
+        <button type="submit" class="submit-button">
+          <img src="./assets/images/icon-arrow.svg" alt="Submit form" />
+        </button>
+      </form>
+      <section id="results">
+        <span id="years"></span> years <br />
+        <span id="months"></span> months <br />
+        <span id="days"></span> days
+      </section>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Anne-Cécile</a>.
+    </footer>
+  </body>
 </html>

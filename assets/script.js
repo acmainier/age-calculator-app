@@ -1,17 +1,15 @@
-const form = document.querySelector('form');
-const dayInput = document.getElementById('day');
-const monthInput = document.getElementById('month');
-const yearInput = document.getElementById('year');
+const form = document.querySelector("form");
+const dayInput = document.getElementById("day");
+const monthInput = document.getElementById("month");
+const yearInput = document.getElementById("year");
 
-const yearsOutput = document.getElementById('years');
-const monthsOutput = document.getElementById('months');
-const daysOutput = document.getElementById('days');
+const yearsOutput = document.getElementById("years");
+const monthsOutput = document.getElementById("months");
+const daysOutput = document.getElementById("days");
 
-const errorDay = document.getElementById('error-day');
-const errorMonth = document.getElementById('error-month');
-const errorYear = document.getElementById('error-year'); 
-
-
+const errorDay = document.getElementById("error-day");
+const errorMonth = document.getElementById("error-month");
+const errorYear = document.getElementById("error-year");
 
 function isValidDate(year, month, day) {
   const date = new Date(year, month - 1, day);
@@ -29,7 +27,11 @@ function calculateAge(birthDate, today) {
 
   if (days < 0) {
     months -= 1;
-    const previousMonthLastDay = new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    const previousMonthLastDay = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      0,
+    ).getDate();
     days += previousMonthLastDay;
   }
 
@@ -42,9 +44,9 @@ function calculateAge(birthDate, today) {
 }
 
 function resetResults() {
-  yearsOutput.textContent = '--';
-  monthsOutput.textContent = '--';
-  daysOutput.textContent = '--';
+  yearsOutput.textContent = "--";
+  monthsOutput.textContent = "--";
+  daysOutput.textContent = "--";
 }
 
 function showResults(age) {
@@ -53,26 +55,31 @@ function showResults(age) {
   daysOutput.textContent = age.days;
 }
 
-form.addEventListener('submit', (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  errorDay.textContent = '';
-  errorMonth.textContent = '';
-  errorYear.textContent = '';
+  errorDay.textContent = "";
+  errorMonth.textContent = "";
+  errorYear.textContent = "";
+  dayInput.closest(".field").classList.remove("error");
+  monthInput.closest(".field").classList.remove("error");
+  yearInput.closest(".field").classList.remove("error");
 
   let hasError = false;
 
   if (!dayInput.value) {
-    errorDay.textContent = 'This field is required';
+    errorDay.textContent = "This field is required";
+    dayInput.closest(".field").classList.add("error");
     hasError = true;
   }
   if (!monthInput.value) {
-    errorMonth.textContent = 'This field is required';
+    errorMonth.textContent = "This field is required";
+    monthInput.closest(".field").classList.add("error");
     hasError = true;
-
   }
   if (!yearInput.value) {
-    errorYear.textContent = 'This field is required';
+    errorYear.textContent = "This field is required";
+    yearInput.closest(".field").classList.add("error");
     hasError = true;
   }
 
@@ -86,28 +93,35 @@ form.addEventListener('submit', (event) => {
   const year = Number(yearInput.value);
   const today = new Date();
 
-if (day < 1 || day > 31) {
-    errorDay.textContent = 'Must be a valid day';
+  if (day < 1 || day > 31) {
+    errorDay.textContent = "Must be a valid day";
+    dayInput.closest(".field").classList.add("error");
     hasError = true;
   }
 
-if (month < 1 || month > 12) {
-    errorMonth.textContent = 'Must be a valid month';
+  if (month < 1 || month > 12) {
+    errorMonth.textContent = "Must be a valid month";
+    monthInput.closest(".field").classList.add("error");
     hasError = true;
   }
 
   if (year > today.getFullYear()) {
-    errorYear.textContent = 'Must be in the past';
+    errorYear.textContent = "Must be in the past";
+    yearInput.closest(".field").classList.add("error");
     hasError = true;
   }
 
-    if (hasError) {
+  if (hasError) {
     resetResults();
     return;
   }
 
   if (!isValidDate(year, month, day)) {
-    errorDay.textContent = 'Must be a valid date';
+    errorDay.textContent = "Must be a valid date";
+    dayInput.closest(".field").classList.add("error");
+    monthInput.closest(".field").classList.add("error");
+    yearInput.closest(".field").classList.add("error");
+
     resetResults();
     return;
   }
@@ -115,6 +129,10 @@ if (month < 1 || month > 12) {
   const birthDate = new Date(year, month - 1, day);
 
   if (birthDate > today) {
+    errorYear.textContent = "Must be in the past";
+    dayInput.closest(".field").classList.add("error");
+    monthInput.closest(".field").classList.add("error");
+    yearInput.closest(".field").classList.add("error");
     resetResults();
     return;
   }

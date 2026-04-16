@@ -1,112 +1,132 @@
 /* import custom fonts using @font-face with local files */
 @font-face {
-    font-family: 'Poppins-Regular';
-    src: url('./fonts/Poppins-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Poppins-Regular";
+  src: url("./fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Poppins-Bold';
-    src: url('./fonts/Poppins-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+  font-family: "Poppins-Bold";
+  src: url("./fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Poppins-ExtraBoldItalic';
-    src: url('./fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
-    font-weight: bold;
-    font-style: italic;
+  font-family: "Poppins-ExtraBoldItalic";
+  src: url("./fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
 }
-
 
 body {
-    background-color: hsl(0, 0%, 86%);
+  background-color: hsl(0, 0%, 86%);
 }
 
 main {
-    background-color: hsl(0, 100%, 100%);
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 10rem;
-    padding: 2rem;
-    border-radius: 1rem;
-    border-bottom-right-radius: 10rem;
+  background-color: hsl(0, 100%, 100%);
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 10rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  border-bottom-right-radius: 10rem;
 }
 
 form {
-    display: flex;
-    align-items: flex-end;
-    gap: 1rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
 }
 
 .field {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 form label {
-    color: hsl(0, 1%, 44%);
-    font-family: 'Poppins-Regular', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    margin-bottom: 0.5rem;
-    display: block;
-    text-align: left;
+  color: hsl(0, 1%, 44%);
+  font-family: "Poppins-Regular", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-align: left;
 }
 
 form input {
-    border-color: hsl(0, 0%, 86%);
-    border-width: 1px;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 32px;
-    font-family: 'Poppins-Bold', sans-serif;
-    width: 7rem; 
+  border-color: hsl(0, 0%, 86%);
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  padding: 15px;
+  font-size: 32px;
+  font-family: "Poppins-Bold", sans-serif;
+  width: 7rem;
+  background-color: white;
 }
 
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 input[type="number"] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input:focus {
+  outline: none;
+  border-color: hsl(259, 100%, 65%);
+  cursor: pointer;
+}
+
+.field.error label {
+  color: hsl(0, 100%, 67%);
+}
+.field.error input {
+  border-color: hsl(0, 100%, 67%);
 }
 
 .submit-button {
-    border: none;
-    background-color: hsl(259, 100%, 65%);
-    border-radius: 50%;
-    padding: 15px;
+  border: none;
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
 }
 
 .submit-button:active {
-    background-color: black;
+  background-color: black;
 }
 
 section {
-    margin-top: 2rem;
-    font-family: 'Poppins-ExtraBoldItalic', sans-serif;
-    font-size: 3rem;
+  margin-top: 2rem;
+  font-family: "Poppins-ExtraBoldItalic", sans-serif;
+  font-size: 3rem;
 }
 
 section span {
-    color: hsl(259, 100%, 65%);
+  color: hsl(259, 100%, 65%);
 }
 
 .error-message {
-    color: hsl(0, 100%, 67%);
-    font-size: 0.75rem;
-    margin-top: 0.25rem;
-    min-height: 1.25rem;
+  color: hsl(0, 100%, 67%);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  min-height: 1.25rem;
 }
 
 .attribution {
-    font-size: 0.6875rem;
-    text-align: center;
+  font-size: 0.6875rem;
+  text-align: center;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+  color: hsl(228, 45%, 44%);
 }
