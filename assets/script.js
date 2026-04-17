@@ -11,6 +11,14 @@ const errorDay = document.getElementById("error-day");
 const errorMonth = document.getElementById("error-month");
 const errorYear = document.getElementById("error-year");
 
+const ERRORS = {
+  required: "This field is required",
+  invalidDay: "Must be a valid day",
+  invalidMonth: "Must be a valid month",
+  invalidYear: "Must be in the past",
+  invalidDate: "Must be a valid date",
+};
+
 function isValidDate(year, month, day) {
   const date = new Date(year, month - 1, day);
   return (
@@ -68,17 +76,17 @@ form.addEventListener("submit", (event) => {
   let hasError = false;
 
   if (!dayInput.value) {
-    errorDay.textContent = "This field is required";
+    errorDay.textContent = ERRORS.required;
     dayInput.closest(".field").classList.add("error");
     hasError = true;
   }
   if (!monthInput.value) {
-    errorMonth.textContent = "This field is required";
+    errorMonth.textContent = ERRORS.required;
     monthInput.closest(".field").classList.add("error");
     hasError = true;
   }
   if (!yearInput.value) {
-    errorYear.textContent = "This field is required";
+    errorYear.textContent = ERRORS.required;
     yearInput.closest(".field").classList.add("error");
     hasError = true;
   }
@@ -94,19 +102,19 @@ form.addEventListener("submit", (event) => {
   const today = new Date();
 
   if (day < 1 || day > 31) {
-    errorDay.textContent = "Must be a valid day";
+    errorDay.textContent = ERRORS.invalidDay;
     dayInput.closest(".field").classList.add("error");
     hasError = true;
   }
 
   if (month < 1 || month > 12) {
-    errorMonth.textContent = "Must be a valid month";
+    errorMonth.textContent = ERRORS.invalidMonth;
     monthInput.closest(".field").classList.add("error");
     hasError = true;
   }
 
   if (year > today.getFullYear()) {
-    errorYear.textContent = "Must be in the past";
+    errorYear.textContent = ERRORS.invalidYear;
     yearInput.closest(".field").classList.add("error");
     hasError = true;
   }
@@ -117,7 +125,7 @@ form.addEventListener("submit", (event) => {
   }
 
   if (!isValidDate(year, month, day)) {
-    errorDay.textContent = "Must be a valid date";
+    errorDay.textContent = ERRORS.invalidDate;
     dayInput.closest(".field").classList.add("error");
     monthInput.closest(".field").classList.add("error");
     yearInput.closest(".field").classList.add("error");
@@ -128,8 +136,8 @@ form.addEventListener("submit", (event) => {
 
   const birthDate = new Date(year, month - 1, day);
 
-  if (birthDate > today) {
-    errorYear.textContent = "Must be in the past";
+  if (birthDate >= today) {
+    errorYear.textContent = ERRORS.invalidYear;
     dayInput.closest(".field").classList.add("error");
     monthInput.closest(".field").classList.add("error");
     yearInput.closest(".field").classList.add("error");

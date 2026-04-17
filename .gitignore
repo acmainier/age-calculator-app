@@ -2,6 +2,13 @@
 *.sketch
 *.fig
 *.xd
+/design
+style-guide.md
+preview.jpg
+
+# AI prompts
+AGENTS.md
+CLAUDE.md
 
 # Dependencies
 /node_modules

@@ -7,6 +7,13 @@
 }
 
 @font-face {
+  font-family: "Poppins-Italic";
+  src: url("./fonts/Poppins-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
   font-family: "Poppins-Bold";
   src: url("./fonts/Poppins-Bold.ttf") format("truetype");
   font-weight: bold;
@@ -20,12 +27,22 @@
   font-style: italic;
 }
 
+:root {
+  --purple-500: hsl(259, 100%, 65%);
+  --red-400: hsl(0, 100%, 67%);
+  --white: hsl(0, 100%, 100%);
+  --grey-100: hsl(0, 0%, 94%);
+  --grey-200: hsl(0, 0%, 86%);
+  --grey-500: hsl(0, 1%, 44%);
+  --black: hsl(0, 0%, 0%);
+}
+
 body {
-  background-color: hsl(0, 0%, 86%);
+  background-color: var(--grey-200);
 }
 
 main {
-  background-color: hsl(0, 100%, 100%);
+  background-color: var(--white);
   width: 50%;
   margin: 0 auto;
   margin-top: 10rem;
@@ -46,8 +63,8 @@ form {
 }
 
 form label {
-  color: hsl(0, 1%, 44%);
-  font-family: "Poppins-Regular", sans-serif;
+  color: var(--grey-500);
+  font-family: "Poppins-Bold", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   margin-bottom: 0.5rem;
@@ -56,7 +73,7 @@ form label {
 }
 
 form input {
-  border-color: hsl(0, 0%, 86%);
+  border-color: var(--grey-200);
   border-width: 1px;
   border-radius: 5px;
   border-style: solid;
@@ -64,11 +81,11 @@ form input {
   font-size: 32px;
   font-family: "Poppins-Bold", sans-serif;
   width: 7rem;
-  background-color: white;
+  background-color: var(--white);
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px white inset;
+  -webkit-box-shadow: 0 0 0 1000px var(--white) inset;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -81,28 +98,28 @@ input[type="number"] {
 }
 
 input:focus {
-  outline: none;
-  border-color: hsl(259, 100%, 65%);
+  outline: 1px solid var(--purple-500);
+  outline-offset: -1px;
   cursor: pointer;
 }
 
 .field.error label {
-  color: hsl(0, 100%, 67%);
+  color: var(--red-400);
 }
 .field.error input {
-  border-color: hsl(0, 100%, 67%);
+  border-color: var(--red-400);
 }
 
 .submit-button {
   border: none;
-  background-color: hsl(259, 100%, 65%);
+  background-color: var(--purple-500);
   border-radius: 50%;
   padding: 15px;
   cursor: pointer;
 }
 
 .submit-button:active {
-  background-color: black;
+  background-color: var(--black);
 }
 
 section {
@@ -112,11 +129,12 @@ section {
 }
 
 section span {
-  color: hsl(259, 100%, 65%);
+  color: var(--purple-500);
 }
 
 .error-message {
-  color: hsl(0, 100%, 67%);
+  color: var(--red-400);
+  font-family: "Poppins-Italic", sans-serif;
   font-size: 0.75rem;
   margin-top: 0.25rem;
   min-height: 1.25rem;
