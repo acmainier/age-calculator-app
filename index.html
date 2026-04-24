@@ -21,7 +21,8 @@
   <body>
     <main>
       <form>
-        <div class="form-fields">
+        <fieldset class="form-fields">
+          <legend class="sr-only">Enter your birth date</legend>
           <div class="field">
             <label for="day">Day</label>
             <input
@@ -29,9 +30,9 @@
               name="day"
               type="number"
               placeholder="DD"
-              maxlength="2"
+              aria-describedby="error-day"
             />
-            <p class="error-message" id="error-day"></p>
+            <p class="error-message" id="error-day" role="alert"></p>
           </div>
           <div class="field">
             <label for="month">Month</label>
@@ -40,9 +41,9 @@
               name="month"
               type="number"
               placeholder="MM"
-              maxlength="2"
+              aria-describedby="error-month"
             />
-            <p class="error-message" id="error-month"></p>
+            <p class="error-message" id="error-month" role="alert"></p>
           </div>
           <div class="field">
             <label for="year">Year</label>
@@ -51,11 +52,11 @@
               name="year"
               type="number"
               placeholder="YYYY"
-              maxlength="4"
+              aria-describedby="error-year"
             />
-            <p class="error-message" id="error-year"></p>
+            <p class="error-message" id="error-year" role="alert"></p>
           </div>
-        </div>
+        </fieldset>
         <div class="divider">
           <hr />
           <button type="submit" class="submit-button">
@@ -63,10 +64,11 @@
           </button>
         </div>
       </form>
-      <section id="results">
-        <span id="years"></span> years <br />
-        <span id="months"></span> months <br />
-        <span id="days"></span> days
+      <section id="results" role="status">
+        <h2 class="sr-only">Your age</h2>
+        <output id="years" for="day month year"></output> years <br />
+        <output id="months" for="day month year"></output> months <br />
+        <output id="days" for="day month year"></output> days
       </section>
     </main>
     <footer class="attribution">
