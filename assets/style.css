@@ -185,7 +185,7 @@ section {
   font-size: 5rem;
 }
 
-section span {
+section output {
   color: var(--purple-500);
 }
 

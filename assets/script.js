@@ -62,10 +62,10 @@ function showResults(age) {
   monthsOutput.textContent = age.months;
   daysOutput.textContent = age.days;
 
-  [yearsOutput, monthsOutput, daysOutput].forEach((span) => {
-    span.classList.remove("animate");
-    void span.offsetWidth;
-    span.classList.add("animate");
+  [yearsOutput, monthsOutput, daysOutput].forEach((output) => {
+    output.classList.remove("animate");
+    void output.offsetWidth;
+    output.classList.add("animate");
   });
 }
 
