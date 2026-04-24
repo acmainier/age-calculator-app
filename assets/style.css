@@ -43,7 +43,7 @@ body {
 
 main {
   background-color: var(--white);
-  width: 50%;
+  width: 90%;
   margin: 0 auto;
   margin-top: 10rem;
   padding: 2rem;
@@ -63,13 +63,16 @@ main {
 }
 
 .divider {
-  display: flex;
-  align-items: center;
+  position: relative;
+  height: 6rem;
 }
 
 hr {
-  flex-grow: 1;
+  position: absolute;
+  top: 50%;
+  width: 100%;
   border: none;
+  margin: 0;
   border-top: 1px solid var(--grey-200);
 }
 
@@ -122,15 +125,17 @@ input:focus {
 }
 
 .submit-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   border: none;
   background-color: var(--purple-500);
   border-radius: 50%;
   width: 6rem;
   height: 6rem;
   cursor: pointer;
+  z-index: 1;
 }
 
 .submit-button img {
@@ -142,9 +147,9 @@ input:focus {
 }
 
 section {
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-family: "Poppins-ExtraBoldItalic", sans-serif;
-  font-size: 3rem;
+  font-size: 5rem;
 }
 
 section span {
@@ -166,4 +171,27 @@ section span {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 970px) {
+  main {
+    width: 50%;
+    transition: width 0.3s ease;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+  }
+
+  hr {
+    flex-grow: 1;
+    position: static;
+  }
+
+  .submit-button {
+    flex-shrink: 0;
+    position: static;
+    transform: none;
+  }
 }
